@@ -12,7 +12,7 @@ CREATE TABLE Funcionarios (
     cpf VARCHAR(14) UNIQUE NOT NULL,
     cargo VARCHAR(50) NOT NULL,
     salario NUMERIC(10, 2) NOT NULL,
-    data_admissao DATE NOT NULL
+    -- data_admissao DATE NOT NULL
 );
 
 CREATE TABLE Mesas (
@@ -64,3 +64,47 @@ CREATE TABLE Pagamentos (
     data_hora_pagamento TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_pagamentos_pedido FOREIGN KEY (id_pedido) REFERENCES Pagamentos(id_pedido)
 );
+
+-- [!VALORES DAS TABELAS!]
+
+-- Tabela Clientes:
+INSERT INTO Clientes (nome, telefone, email, endereco)
+VALUES
+    ('pedro', '8499008-9876', 'pedro@exemplo.com', 'R. da minha casa nº36'),
+    ('jose', '8499078-9046', 'jose@exemplo.com', 'R. da minha casa nº96');
+
+-- Tabela Funcionarios:
+INSERT INTO Funcionarios (nome, cpf, cargo, salario)
+VALUES
+    ('Allyson', '123456789-10', 'cozinheiro', 3592,89),
+    ('Leonardo', '123456789-16', 'Gerente', 8155,90);
+
+-- Tabela Mesas:
+INSERT INTO Mesas (numero_mesa, capacidade, status)
+VALUES
+    (1, 5),
+    (2, 4);
+
+-- Tabela Produtos:
+INSERT INTO Produtos (nome, descricao, preco, categoria, ativo)
+VALUES
+    ('MAcarrao', 'um macarrao', 42,89, 'almoço', FALSE),
+    ('arroz', 'um arroz', 55,90, 'janta', TRUE);
+
+-- Tabela Pedidos:
+INSERT INTO Pedidos (id_mesa, id_cliente, id_funcionario, data_hora_abertura, data_hora_fechamento, tipo_pedido, status_pedido)
+VALUES
+    (1, 1, 1, 'presencial', status_pedido),
+    (2, 2, 2, 'presencial', status_pedido);
+
+-- Tabela Itens_Pedido:
+INSERT INTO Itens_Pedido ()
+VALUES
+    (),
+    ();
+
+-- Tabela Pagamentos:
+INSERT INTO Pagamentos ()
+VALUES
+    (),
+    ();
