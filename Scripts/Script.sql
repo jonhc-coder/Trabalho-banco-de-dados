@@ -11,7 +11,7 @@ CREATE TABLE Funcionarios (
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
     cargo VARCHAR(50) NOT NULL,
-    salario NUMERIC(10, 2) NOT NULL,
+    salario NUMERIC(10, 2) NOT NULL
     -- data_admissao DATE NOT NULL
 );
 
@@ -62,7 +62,7 @@ CREATE TABLE Pagamentos (
     forma_pagamento VARCHAR(30) NOT NULL,
     valor_pago NUMERIC(10, 2) NOT NULL,
     data_hora_pagamento TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_pagamentos_pedido FOREIGN KEY (id_pedido) REFERENCES Pagamentos(id_pedido)
+    CONSTRAINT fk_pagamentos_pedido FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido)
 );
 
 -- [!VALORES DAS TABELAS!]
@@ -76,11 +76,11 @@ VALUES
 -- Tabela Funcionarios:
 INSERT INTO Funcionarios (nome, cpf, cargo, salario)
 VALUES
-    ('Allyson', '123456789-10', 'cozinheiro', 3592,89),
-    ('Leonardo', '123456789-16', 'Gerente', 8155,90);
+    ('Allyson', '123456789-10', 'cozinheiro', 3592.89),
+    ('Leonardo', '123456789-16', 'Gerente', 8155.90);
 
 -- Tabela Mesas:
-INSERT INTO Mesas (numero_mesa, capacidade, status)
+INSERT INTO Mesas (numero_mesa, capacidade)
 VALUES
     (1, 5),
     (2, 4);
@@ -88,8 +88,8 @@ VALUES
 -- Tabela Produtos:
 INSERT INTO Produtos (nome, descricao, preco, categoria, ativo)
 VALUES
-    ('MAcarrao', 'um macarrao', 42,89, 'almoço', FALSE),
-    ('arroz', 'um arroz', 55,90, 'janta', TRUE);
+    ('MAcarrao', 'um macarrao', 42.89, 'almoço', FALSE),
+    ('arroz', 'um arroz', 55.90, 'janta', TRUE);
 
 -- Tabela Pedidos:
 INSERT INTO Pedidos (id_mesa, id_cliente, id_funcionario, data_hora_abertura, data_hora_fechamento, tipo_pedido, status_pedido)
