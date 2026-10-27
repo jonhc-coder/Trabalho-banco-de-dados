@@ -77,7 +77,7 @@ VALUES
 INSERT INTO Funcionarios (nome, cpf, cargo, salario)
 VALUES
     ('Allyson', '123456789-10', 'cozinheiro', 3592.89),
-    ('Leonardo', '123456789-16', 'Gerente', 8155.90);
+    ('Leonardo', '123456789-16', 'Gerente', 8155.99);
 
 -- Tabela Mesas:
 INSERT INTO Mesas (numero_mesa, capacidade)
@@ -92,19 +92,40 @@ VALUES
     ('arroz', 'um arroz', 55.90, 'janta', TRUE);
 
 -- Tabela Pedidos:
-INSERT INTO Pedidos (id_mesa, id_cliente, id_funcionario, data_hora_abertura, data_hora_fechamento, tipo_pedido, status_pedido)
+INSERT INTO Pedidos (id_mesa, id_cliente, id_funcionario, data_hora_abertura, data_hora_fechamento, tipo_pedido)
 VALUES
-    (1, 1, 1, 'presencial', status_pedido),
-    (2, 2, 2, 'presencial', status_pedido);
+    (3, 2, 1, DEFAULT, '2016-12-29 19:00:32', 'presencial'),
+    (1, 2, 3, DEFAULT, '2016-12-29 19:00:32', 'presencial');
 
 -- Tabela Itens_Pedido:
-INSERT INTO Itens_Pedido ()
+INSERT INTO Itens_Pedido (id_pedido, id_produto, quantidade, preco_unitario_historico, observacoes)
 VALUES
-    (),
-    ();
+    (1, 2, 5, 67.67, 'obs.: observacao observacao observacao'),
+    (2, 1, 2, 69.69, 'obs.: observacao observacao observacao');
 
 -- Tabela Pagamentos:
-INSERT INTO Pagamentos ()
+INSERT INTO Pagamentos (id_pedido, forma_pagamento, valor_pago, data_hora_pagamento)
 VALUES
-    (),
-    ();
+    (1, 'pix', 167.08, DEFAULT),
+    (2, 'pix', 167.08, DEFAULT);
+
+-- Consultar todos os clientes
+SELECT * FROM Clientes;
+
+-- Consultar todos os funcionários
+SELECT * FROM Funcionarios;
+
+-- Consultar todas as mesas
+SELECT * FROM Mesas;
+
+-- Consultar todos os produtos
+SELECT * FROM Produtos;
+
+-- Consultar todos os pedidos
+SELECT * FROM Pedidos;
+
+-- Consultar todos os itens dos pedidos
+SELECT * FROM Itens_Pedido;
+
+-- Consultar todos os pagamentos
+SELECT * FROM Pagamentos;
