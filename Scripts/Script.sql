@@ -1,3 +1,14 @@
+BEGIN;
+
+-- 1. Limpa as tabelas anteriores na ordem correta para evitar erros de FK
+DROP TABLE IF EXISTS Pagamentos CASCADE;
+DROP TABLE IF EXISTS Itens_Pedido CASCADE;
+DROP TABLE IF EXISTS Pedidos CASCADE;
+DROP TABLE IF EXISTS Produtos CASCADE;
+DROP TABLE IF EXISTS Mesas CASCADE;
+DROP TABLE IF EXISTS Funcionarios CASCADE;
+DROP TABLE IF EXISTS Clientes CASCADE;
+
 CREATE TABLE Clientes (
     id_cliente SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -94,8 +105,8 @@ VALUES
 -- Tabela Pedidos:
 INSERT INTO Pedidos (id_mesa, id_cliente, id_funcionario, data_hora_abertura, data_hora_fechamento, tipo_pedido)
 VALUES
-    (3, 2, 1, DEFAULT, '2016-12-29 19:00:32', 'presencial'),
-    (1, 2, 3, DEFAULT, '2016-12-29 19:00:32', 'presencial');
+    (2, 2, 1, DEFAULT, '2016-12-29 19:00:32', 'presencial'),
+    (1, 2, 2, DEFAULT, '2016-12-29 19:00:32', 'presencial');
 
 -- Tabela Itens_Pedido:
 INSERT INTO Itens_Pedido (id_pedido, id_produto, quantidade, preco_unitario_historico, observacoes)
@@ -109,23 +120,10 @@ VALUES
     (1, 'pix', 167.08, DEFAULT),
     (2, 'pix', 167.08, DEFAULT);
 
--- Consultar todos os clientes
 SELECT * FROM Clientes;
-
--- Consultar todos os funcionários
 SELECT * FROM Funcionarios;
-
--- Consultar todas as mesas
 SELECT * FROM Mesas;
-
--- Consultar todos os produtos
 SELECT * FROM Produtos;
-
--- Consultar todos os pedidos
 SELECT * FROM Pedidos;
-
--- Consultar todos os itens dos pedidos
 SELECT * FROM Itens_Pedido;
-
--- Consultar todos os pagamentos
 SELECT * FROM Pagamentos;
