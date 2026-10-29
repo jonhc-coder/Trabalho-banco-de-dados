@@ -23,7 +23,6 @@ CREATE TABLE Funcionarios (
     cpf VARCHAR(14) UNIQUE NOT NULL,
     cargo VARCHAR(50) NOT NULL,
     salario NUMERIC(10, 2) NOT NULL
-    -- data_admissao DATE NOT NULL
 );
 
 CREATE TABLE Mesas (
