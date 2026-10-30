@@ -117,7 +117,8 @@ VALUES
 INSERT INTO Pagamentos (id_pedido, forma_pagamento, valor_pago, data_hora_pagamento)
 VALUES
     (1, 'pix', 167.08, DEFAULT),
-    (2, 'c', 167.08, DEFAULT);
+    (2, 'cartão', 167.08, DEFAULT),
+    (3, 'boleto')
 
 SELECT * FROM Clientes;
 SELECT * FROM Funcionarios;
