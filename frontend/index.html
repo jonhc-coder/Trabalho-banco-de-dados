@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTudo - Delivery de Tudo</title>
     <!-- Favicon -->
-    <link href="img/logo DTudo red.png" rel="icon">
+    <link href="img/logo-DTudo-red.png" rel="icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -59,7 +59,7 @@
                 <!-- Brand & Address -->
                 <div class="flex items-center gap-6">
                     <button onclick="resetHome()" class="flex items-center gap-1 focus:outline-none">
-                        <a href="#"> <img src="img/logo DTudo red.png" width="55" height="55"> </a>
+                        <a href="#"> <img src="img/logo-DTudo-red.png" width="55" height="55"> </a>
                         <span class="text-2xl font-black tracking-wider text-brand flex items-center">
                             <span class="text-slate-900">Tudo</span>
                             <span class="w-2 h-2 rounded-full bg-brand ml-0.5"></span>
@@ -249,7 +249,7 @@
                     
                     <div class="relative z-10 flex items-end gap-4">
                         <div id="store-modal-logo" class="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-3xl border-2 border-white shrink-0">
-                            🍔
+
                         </div>
                         <div class="flex-1 truncate">
                             <h2 id="store-modal-name" class="text-xl font-black truncate">Nome da Loja</h2>
@@ -695,12 +695,12 @@
                 fee: 0,
                 isSuper: true,
                 hasCoupon: true,
-                image: '🍔',
+                image: 'img/s1.png',
                 bannerColor: 'bg-amber-600',
                 products: [
-                    { id: 'p1', name: 'Burger Smash Duplo', desc: 'Dois hambúrgueres de 100g, queijo cheddar inglês, bacon caramelizado no pão brioche.', price: 28.90, origPrice: 34.90, category: 'Destaques', emoji: '🍔' },
-                    { id: 'p2', name: 'Combo Bacon King', desc: 'Burger triplo bacon, batata rústica G e refrigerante lata 350ml.', price: 42.00, origPrice: 48.00, category: 'Combos', emoji: '🍟' },
-                    { id: 'p3', name: 'Milkshake de Nutella 500ml', desc: 'Milkshake cremoso com gelato de baunilha e muita Nutella pura.', price: 19.90, origPrice: 0, category: 'Sobremesas', emoji: '🥤' }
+                    { id: 'p1', name: 'Burger Smash Duplo', desc: 'Dois hambúrgueres de 100g, queijo cheddar inglês, bacon caramelizado no pão brioche.', price: 28.90, origPrice: 34.90, category: 'Destaques', image: 'img/logo-DTudo-black.png' },
+                    { id: 'p2', name: 'Combo Bacon King', desc: 'Burger triplo bacon, batata rústica G e refrigerante lata 350ml.', price: 42.00, origPrice: 48.00, category: 'Combos', Image: '🍟' },
+                    { id: 'p3', name: 'Milkshake de Nutella 500ml', desc: 'Milkshake cremoso com gelato de baunilha e muita Nutella pura.', price: 19.90, origPrice: 0, category: 'Sobremesas', image: '🥤' }
                 ]
             },
             {
@@ -713,7 +713,7 @@
                 fee: 7.90,
                 isSuper: true,
                 hasCoupon: true,
-                image: '🛒',
+                image: 'img/s2.png',
                 bannerColor: 'bg-emerald-600',
                 products: [
                     { id: 'p4', name: 'Banana Prata Orgânica 1kg', desc: 'Fresquinha direto dos produtores parceiros.', price: 8.99, origPrice: 10.99, category: 'Hortifruti', emoji: '🍌' },
@@ -731,7 +731,7 @@
                 fee: 3.99,
                 isSuper: false,
                 hasCoupon: false,
-                image: '💊',
+                image: 'img/s3.png',
                 bannerColor: 'bg-rose-600',
                 products: [
                     { id: 'p7', name: 'Dipirona Monoidratada 1g 10 Comprimidos', desc: 'Analgésico e antitérmico.', price: 7.20, origPrice: 9.90, category: 'Medicamentos', emoji: '💊' },
@@ -748,7 +748,7 @@
                 fee: 0,
                 isSuper: true,
                 hasCoupon: true,
-                image: '🍕',
+                image: 'img/s4.png',
                 bannerColor: 'bg-red-700',
                 products: [
                     { id: 'p9', name: 'Pizza Margherita Especial Grande', desc: 'Molho de tomate italiano, mussarela de búfala e manjericão fresco.', price: 54.90, origPrice: 62.00, category: 'Pizzas Tradicionais', emoji: '🍕' },
@@ -765,7 +765,7 @@
                 fee: 2.50,
                 isSuper: false,
                 hasCoupon: true,
-                image: '🍾',
+                image: 'img/s5.png',
                 bannerColor: 'bg-blue-600',
                 products: [
                     { id: 'p11', name: 'Vinho Tinto Concha y Toro Cabernet 750ml', desc: 'Vinho fino seco chileno.', price: 39.90, origPrice: 49.90, category: 'Vinhos', emoji: '🍷' },
@@ -782,7 +782,7 @@
                 fee: 4.00,
                 isSuper: true,
                 hasCoupon: false,
-                image: '🍰',
+                image: 'img/s6.png',
                 bannerColor: 'bg-pink-500',
                 products: [
                     { id: 'p13', name: 'Fatia Torta de Pistache com Frutas Vermelhas', desc: 'Massa crocante, recheio generoso.', price: 21.00, origPrice: 24.00, category: 'Tortas', emoji: '🍰' },
@@ -893,8 +893,11 @@
                     return `
                     <div class="bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all overflow-hidden flex flex-col group cursor-pointer" onclick="openStoreModal('${store.id}')">
                         <div class="p-4 flex gap-4">
-                            <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-3xl shrink-0 group-hover:scale-105 transition-transform border border-slate-100">
-                                ${store.image}
+                            <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform border border-slate-100 overflow-hidden">
+                                ${store.image.startsWith('img/') || store.image.startsWith('http')
+                                    ? `<img src="${store.image}" alt="${store.name}" class="w-full h-full object-cover">`
+                                    : `<span class="text-3xl">${store.image}</span>`
+                                }
                             </div>
                             <div class="flex-1 truncate">
                                 <div class="flex items-center justify-between gap-2">
@@ -1006,7 +1009,14 @@
             document.getElementById('store-modal-category').innerText = currentStoreModal.category;
             document.getElementById('store-modal-time').innerText = currentStoreModal.time;
             document.getElementById('store-modal-fee').innerText = currentStoreModal.fee === 0 ? 'Grátis' : `R$ ${currentStoreModal.fee.toFixed(2)}`;
-            document.getElementById('store-modal-logo').innerText = currentStoreModal.image;
+            const logoContainer = document.getElementById('store-modal-logo');
+
+            logoContainer.innerHTML = currentStoreModal.image.startsWith('img/') ||
+                                    currentStoreModal.image.startsWith('http')
+                ? `<img src="${currentStoreModal.image}" 
+                        alt="${currentStoreModal.name}" 
+                        class="w-full h-full object-cover rounded-2xl">`
+                : `<span class="text-3xl">${currentStoreModal.image}</span>`;
             
             // Render Menu Tabs & Items
             const categories = [...new Set(currentStoreModal.products.map(p => p.category))];
@@ -1028,8 +1038,11 @@
                             ${prod.origPrice ? `<span class="text-[11px] text-slate-400 line-through">R$ ${prod.origPrice.toFixed(2)}</span>` : ''}
                         </div>
                     </div>
-                    <div class="w-16 h-16 rounded-xl bg-slate-100 flex items-center justify-center text-3xl shrink-0">
-                        ${prod.emoji}
+                    <div class="w-16 h-16 rounded-xl bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">
+                        ${prod.image
+                            ? `<img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover">`
+                            : `<span class="text-3xl">${prod.emoji}</span>`
+                        }
                     </div>
                 </div>
             `).join('');
